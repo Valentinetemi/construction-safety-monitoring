@@ -1,0 +1,8 @@
+ultralytics>=8.3.0,<9
+opencv-python-headless>=4.10.0,<5
+numpy>=1.26.0,<3
+streamlit>=1.40.0,<2
+huggingface-hub>=0.27.0,<2
+
+# Test dependency (kept here for a one-command student setup).
+pytest>=8.3.0,<10

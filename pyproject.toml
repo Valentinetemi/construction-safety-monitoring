@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "siteguard"
+version = "0.1.0"
+description = "Evidence-backed construction-site safety monitoring with YOLO, ByteTrack, OpenCV, and SQLite"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "ultralytics>=8.3.0,<9",
+  "opencv-python-headless>=4.10.0,<5",
+  "numpy>=1.26.0,<3",
+  "huggingface-hub>=0.27.0,<2",
+]
+
+[project.optional-dependencies]
+app = ["streamlit>=1.40.0,<2"]
+test = ["pytest>=8.3.0,<10"]
+
+[project.scripts]
+siteguard = "siteguard.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]

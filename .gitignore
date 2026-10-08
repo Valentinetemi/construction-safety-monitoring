@@ -1,6 +1,25 @@
-.venv/
-__pycache__/
 .DS_Store
-*.pyc
 .env
+.venv/
+.venv*/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Downloaded model weights and raw media are intentionally not versioned.
+models/
+*.pt
+*.onnx
+data/*.mp4
+data/*.mov
+data/*.avi
+
+# Runtime output and local databases.
+outputs/
 logs/
+*.db
+*.db-shm
+*.db-wal
