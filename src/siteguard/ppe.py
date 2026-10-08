@@ -13,6 +13,7 @@ from .models import PPEDetection, PPEObservation, PPEStatus, TrackedWorker
 
 DEFAULT_PPE_REPOSITORY = "constructelligence/construction-site-safety-hazards"
 DEFAULT_PPE_FILENAME = "buildvision-hazards-v0.3.pt"
+DEFAULT_PPE_REVISION = "45d07d8e27a4754df1ea651f62153e000133bece"
 
 HELMET_POSITIVE = {"helmet", "hardhat", "hard hat"}
 HELMET_NEGATIVE = {"no helmet", "no hardhat", "without helmet"}
@@ -131,6 +132,7 @@ def create_ppe_detector(
             weights = hf_hub_download(
                 repo_id=DEFAULT_PPE_REPOSITORY,
                 filename=DEFAULT_PPE_FILENAME,
+                revision=DEFAULT_PPE_REVISION,
             )
         except Exception as exc:
             return UnavailablePPEDetector(f"PPE model download unavailable: {exc}")

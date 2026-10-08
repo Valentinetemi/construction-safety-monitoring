@@ -29,7 +29,7 @@ It is built for a final SIWES demonstration on Apple Silicon, with MPS accelerat
 
 ## Quick start
 
-Python 3.11–3.13 is recommended. The repository's old local `.venv` may use a different interpreter; create a fresh environment instead of reusing it.
+Python 3.11 or newer is required. The repository's old local `.venv` may use a different interpreter; create a fresh environment instead of reusing it.
 
 ```bash
 python3.12 -m venv .venv
@@ -60,7 +60,7 @@ The first person-detection run may download the small `yolo11n.pt` checkpoint. `
 
 ## PPE model provenance
 
-The built-in optional adapter uses [`constructelligence/construction-site-safety-hazards`](https://huggingface.co/constructelligence/construction-site-safety-hazards), checkpoint `buildvision-hazards-v0.3.pt` (YOLOv8s, 640 px). Its documented labels include `person`, `hardhat`, `no-hardhat`, `safety vest`, and `no-safety vest`. The model card reports that it was trained from several CC BY 4.0 construction datasets and publishes the weights under AGPL-3.0.
+The built-in optional adapter uses [`constructelligence/construction-site-safety-hazards`](https://huggingface.co/constructelligence/construction-site-safety-hazards), checkpoint `buildvision-hazards-v0.3.pt` (YOLOv8s, 640 px), pinned to model-repository revision `45d07d8e27a4754df1ea651f62153e000133bece`. Its documented labels include `person`, `hardhat`, `no-hardhat`, `safety vest`, and `no-safety vest`. The model card reports that it was trained from several CC BY 4.0 construction datasets and publishes the weights under AGPL-3.0. See [`docs/ppe-model.md`](docs/ppe-model.md) for the complete class list and provenance.
 
 The model card also warns that missing-PPE classes are harder than worn-PPE classes. SiteGuard therefore:
 

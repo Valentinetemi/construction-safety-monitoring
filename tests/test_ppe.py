@@ -1,5 +1,5 @@
 from siteguard.models import PPEDetection, PPEObservation, PPEStatus, TrackedWorker
-from siteguard.ppe import TemporalPPEMonitor, associate_ppe
+from siteguard.ppe import TemporalPPEMonitor, associate_ppe, create_ppe_detector
 
 
 def make_observation(worker_id: int, status: PPEStatus) -> PPEObservation:
@@ -46,6 +46,16 @@ def test_explicit_negative_label_is_possible_violation() -> None:
 
     assert observation.helmet == PPEStatus.POSSIBLE_VIOLATION
     assert observation.status == PPEStatus.POSSIBLE_VIOLATION
+
+
+def test_missing_ppe_weights_create_unknown_adapter(tmp_path) -> None:
+    detector = create_ppe_detector(
+        tmp_path / "missing.pt", download_model=False, confidence=0.35, device="cpu"
+    )
+
+    assert not detector.available
+    assert "not found" in (detector.reason or "")
+    assert detector.detect(object()) == []
 
 
 def test_temporal_confirmation_and_continuous_incident_deduplication() -> None:
