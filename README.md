@@ -100,6 +100,17 @@ video -> YOLO person model -> ByteTrack -> worker tracks
 
 See [`docs/architecture.md`](docs/architecture.md), [`docs/methodology.md`](docs/methodology.md), and [`docs/demo.md`](docs/demo.md) for the detailed design and presentation workflow.
 
+## Verified synthetic demonstration
+
+Three Sora-generated construction-site clips have been processed end to end with the real person detector, ByteTrack, and the pinned PPE detector. They are synthetic test media—not footage from A & K Construction Limited—and the results demonstrate pipeline execution rather than model accuracy. No restricted-zone polygon was configured, so the runs correctly contain no zone events.
+
+- [`docs/synthetic-evaluation/VIDEO_MANIFEST.md`](docs/synthetic-evaluation/VIDEO_MANIFEST.md) records the input metadata and hashes.
+- [`docs/synthetic-evaluation/RESULTS.md`](docs/synthetic-evaluation/RESULTS.md) records measured processing times and observed outputs.
+- [`docs/synthetic-evaluation/DEMO_PLAYBOOK.md`](docs/synthetic-evaluation/DEMO_PLAYBOOK.md) gives the exact presentation and reproduction sequence.
+- [`SIWES_DEFENSE_CODE_GUIDE.md`](SIWES_DEFENSE_CODE_GUIDE.md) explains the implementation and provides defense questions and answers.
+
+The source clips and generated media remain under the ignored `videos/` and `outputs/` directories. They are intentionally not distributed through Git.
+
 ## Testing versus evaluation
 
 `pytest` exercises deterministic geometry, state machines, timestamps, storage, reporting, and invalid-video behavior. Model-dependent unit tests use injected fakes and are marked clearly. Passing them proves software behavior, not model accuracy.
