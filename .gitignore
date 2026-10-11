@@ -16,6 +16,7 @@ models/
 data/*.mp4
 data/*.mov
 data/*.avi
+videos/
 
 # Runtime output and local databases.
 outputs/
