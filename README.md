@@ -130,4 +130,4 @@ Real-world evaluation begins only after you provide construction footage. Follow
 
 ## Licensing note
 
-Ultralytics and the optional PPE weights are offered under AGPL-3.0 unless you hold an applicable commercial licence. The PPE training sources are documented as CC BY 4.0 by the model publisher. Review those terms before redistribution or commercial deployment. Model weights and raw videos are deliberately excluded from Git
+Ultralytics and the optional PPE weights are offered under AGPL-3.0 unless you hold an applicable commercial licence. The PPE training sources are documented as CC BY 4.0 by the model publisher. Review those terms before redistribution or commercial deployment. Model weights and raw videos are deliberately excluded from Git.

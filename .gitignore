@@ -6,8 +6,16 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
 .coverage
+.coverage.*
+coverage.xml
 htmlcov/
+build/
+dist/
 
 # Downloaded model weights and raw media are intentionally not versioned.
 models/
