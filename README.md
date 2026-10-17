@@ -4,7 +4,7 @@ SiteGuard is a local, evidence-backed construction-site video analysis system. I
 
 It is built for a final SIWES demonstration on Apple Silicon, with MPS acceleration when PyTorch supports it and automatic CPU retry when MPS inference fails.
 
-## What is real—and what is not
+## What is real and what is not
 
 - Person boxes come from Ultralytics YOLO, not hard-coded coordinates.
 - Track IDs come from ByteTrack through `model.track(..., persist=True, tracker="bytetrack.yaml")`.
